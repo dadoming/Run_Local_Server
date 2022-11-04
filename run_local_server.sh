@@ -56,7 +56,7 @@ fi
 
 # Turns off firewall, otherwise it won't work
 
-sudo ufw disable
+sudo ufw allow $LAUNCH_PORT
 
 # Gets ipv4 address of the sharing device
 
@@ -73,4 +73,4 @@ python3 -m http.server -b $IP_HOST -d $PATH_TO_DIR $LAUNCH_PORT
 
 # Turn firewall back on after execution
 
-sudo ufw enable 
+sudo ufw deny $LAUNCH_PORT
