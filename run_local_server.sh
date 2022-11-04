@@ -17,14 +17,15 @@
 #    while running !
 
 
-#   Colors 
+# Colors 
 
 GREEN='\033[1;32m'
 RED='\033[1;31m'
 RESET='\033[0m'
 
 
-#   Gets directory from user input and checks if it exists. Sets to current directory if no directory is provided.
+# Gets directory from user input and checks if it exists. Sets to current directory if no directory is provided. 
+# Exits if directory not found
 
 echo "(Press enter to select current folder)"
 read -p 'Path to the directory where you want to launch server: ' PATH_TO_DIR
@@ -41,7 +42,7 @@ if [ ! -d "$PATH_TO_DIR" ]; then
     exit 0
 fi
 
-#   Gets port from user, 8000 is selected if no port is provided
+# Gets port from user, 8000 is selected if no port is provided
 
 echo "(Press enter to select port 8000)"
 read -p 'Port to launch on: ' LAUNCH_PORT
@@ -53,11 +54,11 @@ else
     echo -e "${GREEN}Port set to: 8000${RESET}"
 fi
 
-#   Turns off firewall, otherwise it wont work
+# Turns off firewall, otherwise it won't work
 
 sudo ufw disable
 
-#   Gets ipv4 address of the sharing device
+# Gets ipv4 address of the sharing device
 
 IP_HOST=`hostname -I | awk '{print $1}' | grep -E '[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}'`
 
@@ -66,8 +67,10 @@ printf "${GREEN}Type this in the device you want to connect with->  \e[4m%s:%s\e
 echo ""
 echo ""
 
+# Start server with provided information
+
 python3 -m http.server -b $IP_HOST -d $PATH_TO_DIR $LAUNCH_PORT
 
-#   Turn firewall back on after execution
+# Turn firewall back on after execution
 
 sudo ufw enable 
