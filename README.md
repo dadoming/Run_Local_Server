@@ -15,6 +15,7 @@ It **requires sudo permissions** in order to turn off firewall. After executing 
 ### To run:
 You can provide path to directory and port.
 Script retrieves your machine's ipv4 address.
+
 Or you can just place the executable inside the desired folder and `cd` into that folder, then run in terminal:
 ```
 bash run_local_server.sh
