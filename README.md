@@ -10,7 +10,7 @@ If not installed:
 ```
 sudo apt-get update && sudo apt install python3
 ```
-It **requires sudo permissions** in order to turn off firewall. After executing it will turn it back on.
+It **requires sudo permissions** in order to add rule to firewall. After executing it will delete that same rule and firewall status will be the same as it was.
 
 ### To run:
 You can provide path to directory and port.
@@ -30,4 +30,4 @@ bash run_local_server.sh
 
 >Connect to the server by typing the **underlined text** in the search bar in your second device's browser, et voi lá! (You can also check it out from your personal computer typing the same!) 
 
->To stop server and reactivate firewall press **_Ctrl-C_**.
+>To stop server and delete firewall's added rules press **_Ctrl-C_**.
