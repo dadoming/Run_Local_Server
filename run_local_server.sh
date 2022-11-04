@@ -2,8 +2,8 @@
 
 #   Run this script to set your own localserver to be accessed by other devices.
 #
-#   Either put this in root of the chosen directory and double tap enter,
-#    or run and provide the directory to be shared and port to be hosted.
+#   Either put this in chosen directory and double tap enter,
+#    or run and provide the directory to be shared and the port to be hosted.
 #
 #   Type $> bash run_local_server.sh
 #   
@@ -13,8 +13,8 @@
 #
 #   To stop exectution press Ctrl-C.
 # 
-#   ! This program needs root permissions to run and will deactivate your firewall
-#    while running !
+#   ! This program needs root permissions to run and will create an allow port rule while executing !
+#
 
 
 # Colors 
@@ -54,7 +54,7 @@ else
     echo -e "${GREEN}Port set to: 8000${RESET}"
 fi
 
-# Turns off firewall, otherwise it won't work
+# Adds the port rule to firewall
 
 sudo ufw allow $LAUNCH_PORT
 
@@ -71,6 +71,6 @@ echo ""
 
 python3 -m http.server -b $IP_HOST -d $PATH_TO_DIR $LAUNCH_PORT
 
-# Turn firewall back on after execution
+# Deletes rule from firewall after execution
 
-sudo ufw deny $LAUNCH_PORT
+sudo ufw delete allow $LAUNCH_PORT
