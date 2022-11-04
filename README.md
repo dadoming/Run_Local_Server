@@ -6,4 +6,6 @@ This Bash script was created to access or see personal computer files from anoth
 It creates a HTTP server using a python3.
 
 If not installed:
-`sudo apt-get update && sudo apt install python3`
+`
+sudo apt-get update && sudo apt install python3
+`
