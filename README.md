@@ -3,7 +3,7 @@ Bash script to run a HTTP server on a local network.
 
 ## Use:
 This Bash script was created to access or see personal computer files from another device inside a local network.
-It creates a HTTP server using a python3.
+It creates a HTTP server using a python3 command.
 
 ### Prerequisites:
 If not installed:
