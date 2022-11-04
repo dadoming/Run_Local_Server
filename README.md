@@ -23,7 +23,7 @@ Then you will be prompted to choose a port, just press enter, else change it to 
 
 If everything ran successfully you now have a HTTP server running on local network.
 Connect your second device to the same Wi-Fi network as your computer.
-Connect to the server by typing the **underlined text in the terminal** in the search bar in your second device's browser, et voi lá!
+Connect to the server by typing the **underlined text** in the search bar in your second device's browser, et voi lá!
 (You can also check it out from your personal computer typing the same!) 
 
 To stop server and reactivate firewall press **_Ctrl-C_**.
